@@ -2,7 +2,9 @@ class MoviesController < ApplicationController
   def new
     @the_movie = Movie.new
 
-    render template: "movies/new.html.erb"
+    #render template: "movies/new"
+    #render "movies/new"
+    # If the name of the action and the name of the controller matches, we can delete the renders
   end
 
   def index
@@ -15,9 +17,7 @@ class MoviesController < ApplicationController
         render json: @list_of_movies
       end
 
-      format.html do
-        render template: "movies/index.html.erb"
-      end
+    format.html
     end
   end
 
@@ -28,7 +28,6 @@ class MoviesController < ApplicationController
 
     @the_movie = matching_movies.first
 
-    render template: "movies/show.html.erb"
   end
 
   def create
@@ -40,7 +39,7 @@ class MoviesController < ApplicationController
       @the_movie.save
       redirect_to movies_url, notice: "Movie created successfully."
     else
-      render template: "movies/new.html.erb"
+      render "new"
     end
   end
 
@@ -51,7 +50,6 @@ class MoviesController < ApplicationController
 
     @the_movie = matching_movies.first
 
-    render template: "movies/edit.html.erb"
   end
 
   def update
