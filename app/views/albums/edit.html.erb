@@ -1,0 +1,21 @@
+<h1>Edit album</h1>
+
+<% @album.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
+
+<%= form_with(url: album_path(@album), method: :patch) do%>
+  <div>
+    <%= label_tag :title %>
+    <%= text_field_tag :title, @album.title %>
+  </div>
+
+  <div>
+    <%= label_tag :artist%>
+    <%= text_area_tag :artist, @album.artist %>
+  </div>
+
+  <%= button_tag "Update album" %>
+<%end%>
+
+</form>

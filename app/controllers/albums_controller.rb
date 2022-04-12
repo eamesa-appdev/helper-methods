@@ -15,8 +15,8 @@ class AlbumsController < ApplicationController
     end
   end
 
-  def album
-    @album = album.find(params.fetch(:id))
+  def show
+    @album = Album.find(params.fetch(:id))
   end
 
   def create
@@ -34,11 +34,11 @@ class AlbumsController < ApplicationController
   end
 
   def edit
-    @album = album.find(params.fetch(:id))
+    @album = Album.find(params.fetch(:id))
   end
 
   def update #not updated
-    album = album.find(params.fetch(:id))
+    album = Album.find(params.fetch(:id))
 
     album.title = params.fetch(:title)
     album.artist = params.fetch(:artist)
