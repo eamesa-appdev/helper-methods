@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   #get"/",  controller => "movies", action: "index" 
   #get "/" => "movies#index"
-  root "movies#index"
+  root "albums#index"
 
   resources :movies
   resources :albums

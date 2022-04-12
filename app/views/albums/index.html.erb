@@ -1,0 +1,66 @@
+<h1>
+  List of all albums
+</h1>
+
+<hr>
+
+<div>
+  <%= link_to "Add a new album", new_album_path %>
+</div>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Title
+    </th>
+
+    <th>
+      Artist
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @albums.each do |album| %>
+  <tr>
+    <td>
+      <%= album.id %>
+    </td>
+
+    <td>
+      <%= album.title %>
+    </td>
+
+    <td>
+      <%= album.artist %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(album.created_at) %> ago
+    </td>
+    <td>
+      <%= time_ago_in_words(album.updated_at) %> ago
+    </td>
+
+    <td>
+      <%= link_to "Show details", album %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
