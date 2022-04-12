@@ -21,7 +21,7 @@ class AlbumsController < ApplicationController
 
   def create
 
-    album_attributes = params.require(:album).permit(:title, :description)
+    album_attributes = params.require(:album).permit(:title, :artist)
 
     @album = album.new(album_attributes)
 
@@ -41,7 +41,7 @@ class AlbumsController < ApplicationController
     album = album.find(params.fetch(:id))
 
     album.title = params.fetch(:title)
-    album.description = params.fetch(:description)
+    album.artist = params.fetch(:artist)
 
     if album.valid?
       album.save
