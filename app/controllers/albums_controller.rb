@@ -23,7 +23,7 @@ class AlbumsController < ApplicationController
 
     album_attributes = params.require(:album).permit(:title, :artist)
 
-    @album = album.new(album_attributes)
+    @album = Album.new(album_attributes)
 
     if @album.valid?
       @album.save
