@@ -14,10 +14,9 @@
       </div>
 
       <div>
-        <a href="<%=album_path(@album)%>" data-method="delete">
-          Delete album
-        </a>
+        <%= link_to "Delete album", album_path(@album), method: "delete"%>
       </div>
+
     </div>
 
     <dl>

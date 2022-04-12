@@ -14,9 +14,7 @@
       </div>
 
       <div>
-        <a href="<%=movie_path(@movie)%>" data-method="delete">
-          Delete movie
-        </a>
+        <%= link_to "Delete movie", movie_path(@movie), method: "delete"%>
       </div>
     </div>
 

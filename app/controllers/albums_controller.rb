@@ -52,7 +52,7 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
-    @album = album.find(params.fetch(:id))
+    @album = Album.find(params.fetch(:id))
 
     @album.destroy
 
